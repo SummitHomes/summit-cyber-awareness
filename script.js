@@ -15,7 +15,7 @@ async function checkPassword() {
         const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         
         if (hashHex === storedHash) {
-            showResult(''<strong>🎉 Congratulations you cracked it!</strong>: "Remember, strong passwords like this keep hackers out. Submit a screenshot of this to fabiof@summithomes.com.au to be in the running to win one of 3 $50 Amazon gift vouchers."', true);
+            showResult('<strong>🎉 Congratulations you cracked it!</strong>: "Remember, strong passwords like this keep hackers out. Submit a screenshot of this to fabiof@summithomes.com.au to be in the running to win one of 3 $50 Amazon gift vouchers."', true);
         } else {
             showResult('❌ Not quite! Double-check the clues and try again. (Hint: No spaces!)', false);
         }
