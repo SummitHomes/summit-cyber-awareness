@@ -21,7 +21,8 @@ header {
 .logo {
     max-width: 200px;
     height: auto;
-    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto 10px auto; /* Centers horizontally, adds bottom margin */
 }
 
 h1 {
