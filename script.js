@@ -3,7 +3,7 @@
 // Password hash remains unchanged for security.
 
 // Sample stored hash (SHA-256 of the correct password - kept as-is)
-const STORED_HASH = '69954a7d56e23a5764bbe6d966daecb2d47c0b889ef4a64965188978a4922eb9';
+const STORED_HASH = '156ebb02a92829a7adf3efffd1d7b5181f35e05a0155bb401e9d16c59e90ed03';
 
 // Progressive hints based on partial checks (e.g., length, special char) to guide without spoiling
 const HINTS = {
@@ -11,7 +11,7 @@ const HINTS = {
     length: '❌ Hint: Check the character count! (Clue 1)',
     noExclaim: '❌ Hint: Look for the special character! (Clue 2)',
     noYear: '❌ Hint: Think about our founding year! (Clue 2)',
-    noSlogan: '❌ Hint: Consider the slogan on the wall! (Clue 3)',
+    noSlogan: '❌ Hint: Consider the slogan! (Clue 3)',
     generic: '❌ Not quite! Double-check the clues and try again. (Hint: No spaces!)'
 };
 
@@ -34,7 +34,7 @@ async function checkPassword() {
     }
 
     // Progressive hints before full hash check (for better UX without revealing)
-    if (guess.length !== 17) {
+    if (guess.length !== 22) {
         showResult(HINTS.length, 'error');
         return;
     }
@@ -46,7 +46,7 @@ async function checkPassword() {
         showResult(HINTS.noYear, 'error');
         return;
     }
-    if (!guess.toLowerCase().includes('Summit')) { // Assuming slogan keyword; adjust if exact differs
+    if (!guess.toLowerCase().includes('Built')) { // Assuming slogan keyword; adjust if exact differs
         showResult(HINTS.noSlogan, 'error');
         return;
     }
