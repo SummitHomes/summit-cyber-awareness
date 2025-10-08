@@ -3,7 +3,7 @@
 // Password hash remains unchanged for security.
 
 // Sample stored hash (SHA-256 of the correct password - kept as-is)
-const STORED_HASH = 'd1e4f5a6b7c8d9e0f1a2b3c4d5e6f7890a1b2c3d4e5f67890a1b2c3d4e5f6';
+const STORED_HASH = '156ebb02a92829a7adf3efffd1d7b5181f35e05a0155bb401e9d16c59e90ed03';
 
 // Progressive hints based on partial checks (e.g., length, special char) to guide without spoiling
 const HINTS = {
