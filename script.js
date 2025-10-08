@@ -46,7 +46,7 @@ async function checkPassword() {
         showResult(HINTS.noYear, 'error');
         return;
     }
-    if (!guess.toLowerCase().includes('Built')) { // Assuming slogan keyword; adjust if exact differs
+    if (!guess.includes('Built')) { // Assuming slogan keyword; adjust if exact differs
         showResult(HINTS.noSlogan, 'error');
         return;
     }
