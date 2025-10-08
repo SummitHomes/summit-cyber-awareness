@@ -16,6 +16,9 @@ header {
     border-radius: 10px;
     margin-bottom: 30px;
     box-shadow: 0 4px 8px rgba(223, 26, 34, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
@@ -23,6 +26,41 @@ header {
     height: auto;
     display: block;
     margin: 0 auto 10px auto; /* Centers horizontally, adds bottom margin */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+}
+
+.social a {
+    color: #FFFFFF;
+    font-size: 1.5em;
+    transition: color 0.2s;
+}
+
+.social a:hover {
+    color: #FFF5F5;
+}
+
+.icon {
+    max-width: 80px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.icon:hover {
+    opacity: 1;
 }
 
 h1 {
@@ -103,12 +141,13 @@ ul {
     border: 2px solid #DF1A22;
     border-radius: 5px;
     font-size: 1em;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 #passwordInput:focus {
     outline: none;
     border-color: #B8181C;
+    box-shadow: 0 0 0 2px rgba(223, 26, 34, 0.2);
 }
 
 button {
@@ -119,11 +158,17 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
 }
 
-button:hover {
+button:hover:not(:disabled) {
     background: #B8181C;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
 }
 
 .hidden {
@@ -135,12 +180,24 @@ button:hover {
     padding: 15px;
     border-radius: 5px;
     font-weight: bold;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 #result.success {
     background: #D4EDDA;
     color: #155724;
     border: 1px solid #C3E6CB;
+}
+
+#result.error {
+    background: #F8D7DA;
+    color: #721C24;
+    border: 1px solid #F5C6CB;
 }
 
 .pro-tip {
@@ -151,6 +208,39 @@ button:hover {
     margin-top: 15px;
     text-align: center;
     font-size: 0.9em;
+    border-left: 4px solid #007BFF;
+}
+
+.cta {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.cta a {
+    display: inline-block;
+    background: #DF1A22;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+.cta a:hover {
+    background: #B8181C;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Mobile: Stack & simplify */
@@ -174,6 +264,14 @@ button:hover {
     
     h1 { font-size: 1.5em; }
     h2 { font-size: 1.3em; }
+    
+    .social {
+        gap: 10px;
+    }
+    
+    .social a {
+        font-size: 1.2em;
+    }
 }
 
 footer {
