@@ -14,7 +14,6 @@
         <div class="header-content">
             <h1>🔒 Cyber Safety Awareness Month 2025</h1>
             <p>Stay secure at work & home. Building a cyber-strong world just like our quality WA homes.</p>
-            
         </div>
     </header>
 
@@ -29,10 +28,14 @@
                     <p role="listitem"><strong>Clue 2:</strong> Includes our founding year and the special character '!'.</p>
                     <p role="listitem"><strong>Clue 3:</strong> Includes a slogan which can be found on a wall in Myaree HQ often sung by longterm team members.</p>
                 </div>
-                <div class="input-group">
-                    <label for="passwordInput" class="sr-only">Enter your password guess</label>
-                    <input type="password" id="passwordInput" placeholder="Your guess..." maxlength="17" aria-describedby="clues">
-                    <button onclick="checkPassword()" aria-label="Submit password guess">Crack It!</button>
+                <div class="form-wrapper">
+                    <div class="input-group">
+                        <label for="passwordInput" class="sr-only">Enter your password guess</label>
+                        <input type="password" id="passwordInput" placeholder="Enter your 17-character guess..." maxlength="17" aria-describedby="clues">
+                        <button onclick="checkPassword()" aria-label="Submit password guess">
+                            <i class="fas fa-unlock-alt"></i> Crack It!
+                        </button>
+                    </div>
                 </div>
                 <div id="result" class="hidden" role="alert"></div>
             </section>
