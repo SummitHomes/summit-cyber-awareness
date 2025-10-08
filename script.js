@@ -11,7 +11,7 @@ const HINTS = {
     length: '❌ Hint: Check the character count! (Clue 1)',
     noExclaim: '❌ Hint: Look for the special character! (Clue 2)',
     noYear: '❌ Hint: Think about our founding year! (Clue 2)',
-    noSlogan: '❌ Hint: Consider the slogan! (Clue 3)',
+    noSlogan: '❌ Hint: Consider the slogan! Try different variations (Clue 3)',
     generic: '❌ Not quite! Double-check the clues and try again. (Hint: No spaces!)'
 };
 
