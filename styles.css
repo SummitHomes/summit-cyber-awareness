@@ -333,3 +333,114 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+.phishing-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 2px dashed #DF1A22;
+    border-radius: 10px;
+}
+
+.phishing-section h3 {
+    color: #DF1A22;
+    margin-bottom: 10px;
+}
+
+.banners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.banner {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.banner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.banner i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    margin: 15%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #DF1A22;
+}
+
+.close:hover {
+    color: #B8181C;
+}
+
+.modal h4 {
+    color: #DF1A22;
+    margin-bottom: 10px;
+}
+
+.modal button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.modal button:hover {
+    background: #218838;
+}
+
+@media (max-width: 768px) {
+    .banners-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        margin: 10%;
+        width: 80%;
+    }
+}

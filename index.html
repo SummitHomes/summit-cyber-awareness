@@ -38,6 +38,23 @@
                     </div>
                 </div>
                 <div id="result" class="hidden" role="alert"></div>
+
+                <!-- New Phishing Simulation Section -->
+                <div id="phishing-sim" class="phishing-section">
+                    <h3>🛡️ Spot the Phishing Trap!</h3>
+                    <p>Click these "banners" if they look tempting—but watch what happens!</p>
+                    <div class="banners-grid">
+                        <div class="banner" onclick="showPhishingAlert('money')">
+                            <i class="fas fa-dollar-sign"></i> Win $1,000 Cash Now! Instant Prize!
+                        </div>
+                        <div class="banner" onclick="showPhishingAlert('free')">
+                            <i class="fas fa-gift"></i> Free iPhone 16 – Claim Yours Today!
+                        </div>
+                        <div class="banner" onclick="showPhishingAlert('urgent')">
+                            <i class="fas fa-exclamation-triangle"></i> Urgent: Your Account Needs Verification – Click Here!
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section id="tips" aria-labelledby="tips-heading">
@@ -64,6 +81,17 @@
             </section>
         </div>
     </main>
+
+    <!-- Phishing Alert Modal -->
+    <div id="phishing-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="hidePhishingAlert()">&times;</span>
+            <h4>⚠️ Phishing Alert!</h4>
+            <p id="alert-message"></p>
+            <p><strong>Lesson:</strong> Always hover over links, check URLs, and verify sources before clicking. Report suspicious messages to IT!</p>
+            <button onclick="hidePhishingAlert()">Got It!</button>
+        </div>
+    </div>
 
     <footer role="contentinfo">
         <p>&copy; 2025 Summit Homes Group | Built Around People | <a href="https://summithomes.com.au">summithomes.com.au</a></p>

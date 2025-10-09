@@ -86,6 +86,34 @@ async function checkPassword() {
     }
 }
 
+function showPhishingAlert(type) {
+    const modal = document.getElementById('phishing-modal');
+    const message = document.getElementById('alert-message');
+    
+    let alertText = '';
+    switch (type) {
+        case 'money':
+            alertText = 'This "win cash" link could steal your banking details!';
+            break;
+        case 'free':
+            alertText = 'That free gadget offer? Likely malware in disguise.';
+            break;
+        case 'urgent':
+            alertText = 'Urgent verification? A classic scam to grab your login.';
+            break;
+        default:
+            alertText = 'Suspicious link detected!';
+    }
+    
+    message.textContent = alertText;
+    modal.classList.remove('hidden');
+}
+
+function hidePhishingAlert() {
+    document.getElementById('phishing-modal').classList.add('hidden');
+}
+
+
 function showResult(message, type = 'error') {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = message;
