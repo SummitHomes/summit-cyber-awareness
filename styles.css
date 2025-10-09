@@ -433,7 +433,9 @@ footer a:hover {
 .modal button:hover {
     background: #218838;
 }
-
+.modal.hidden {
+    display: none !important; /* Overrides flex; !important ensures it sticks */
+}
 @media (max-width: 768px) {
     .banners-grid {
         grid-template-columns: 1fr;
